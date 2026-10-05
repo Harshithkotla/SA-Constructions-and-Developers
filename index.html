@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SA Constructions and Developers — planning, design, construction, interiors, Vastu and property consultation by Pannala Ajay." />
+  <title>SA Constructions & Developers | Building Dreams</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --navy:#07182f;
+      --navy-2:#0c2343;
+      --gold:#d9a62a;
+      --gold-2:#f1c24d;
+      --ink:#10213a;
+      --muted:#64748b;
+      --line:rgba(16,33,58,.12);
+      --soft:#f7f9fc;
+      --white:#fff;
+      --shadow:0 18px 55px rgba(7,24,47,.13);
+      --radius:22px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:"DM Sans",sans-serif;
+      color:var(--ink);
+      background:var(--white);
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    button,input,textarea,select{font:inherit}
+
+    .container{width:min(var(--max),calc(100% - 40px));margin:auto}
+    .gold{color:var(--gold)}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:10px;
+      text-transform:uppercase;letter-spacing:.15em;
+      font-size:.74rem;font-weight:800;color:var(--gold);
+    }
+    .eyebrow::before{content:"";width:28px;height:2px;background:var(--gold);border-radius:99px}
+    .section-title{
+      font-family:"Manrope",sans-serif;font-size:clamp(2rem,4vw,3.3rem);
+      line-height:1.07;letter-spacing:-.045em;margin:12px 0 16px;
+    }
+    .section-copy{color:var(--muted);max-width:650px}
+    .section-head{margin-bottom:48px}
+
+    /* Header */
+    .topbar{
+      background:var(--navy);
+      color:#dfe8f8;
+      font-size:.83rem;
+    }
+    .topbar-inner{
+      min-height:38px;display:flex;align-items:center;justify-content:space-between;gap:20px;
+    }
+    .topbar-left,.topbar-right{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+    .topbar a{transition:.25s}.topbar a:hover{color:#fff}
+    .site-header{
+      position:sticky;top:0;z-index:50;
+      background:rgba(255,255,255,.88);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(16,33,58,.08);
+    }
+    .nav{
+      min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:30px;
+    }
+    .brand{display:flex;align-items:center;min-width:235px}.brand img{height:62px;width:auto}
+    .nav-links{display:flex;align-items:center;gap:28px}
+    .nav-links a{
+      position:relative;font-size:.88rem;font-weight:700;color:#24344d;
+      padding:29px 0;
+    }
+    .nav-links a::after{
+      content:"";position:absolute;left:0;bottom:20px;width:0;height:2px;
+      background:var(--gold);transition:.25s;
+    }
+    .nav-links a:hover::after,.nav-links a.active::after{width:100%}
+    .nav-cta{
+      display:inline-flex;align-items:center;gap:10px;background:var(--navy);color:#fff;
+      padding:13px 18px;border-radius:12px;font-weight:800;font-size:.86rem;transition:.25s;
+      box-shadow:0 9px 25px rgba(7,24,47,.16);
+    }
+    .nav-cta:hover{transform:translateY(-2px);background:#102d54}
+    .menu-btn{display:none;background:none;border:0;font-size:1.6rem;color:var(--navy);cursor:pointer}
+
+    /* Hero */
+    .hero{
+      min-height:720px;background:var(--navy);position:relative;overflow:hidden;color:#fff;
+    }
+    .hero::before{
+      content:"";position:absolute;inset:0;
+      background:
+       radial-gradient(circle at 72% 30%,rgba(217,166,42,.2),transparent 30%),
+       linear-gradient(90deg,rgba(7,24,47,.98) 0%,rgba(7,24,47,.84) 44%,rgba(7,24,47,.12) 72%,rgba(7,24,47,.28) 100%);
+      z-index:1;
+    }
+    .hero-media{
+      position:absolute;inset:0;overflow:hidden;
+    }
+    .hero-media img{
+      width:100%;height:100%;object-fit:cover;
+      object-position:62% center;filter:saturate(.93) contrast(1.03);
+      transform:scale(1.07);
+      animation:heroZoom 12s ease-in-out infinite alternate;
+    }
+    @keyframes heroZoom{from{transform:scale(1.06)}to{transform:scale(1.12)}}
+    .hero-grid{
+      position:relative;z-index:2;min-height:720px;display:grid;grid-template-columns:1.08fr .92fr;align-items:center;
+      padding:70px 0;
+    }
+    .hero-content{max-width:690px}
+    .hero-title{
+      font-family:"Manrope",sans-serif;font-size:clamp(3rem,6.6vw,6.1rem);line-height:.94;
+      letter-spacing:-.06em;margin:16px 0 24px;font-weight:800;
+    }
+    .hero-title span{display:block;color:var(--gold-2)}
+    .hero-sub{font-size:1.08rem;color:#dce8f8;max-width:650px}
+    .hero-pills{display:flex;gap:9px;flex-wrap:wrap;margin:24px 0 30px}
+    .pill{
+      padding:9px 13px;border:1px solid rgba(255,255,255,.18);border-radius:999px;
+      color:#dce8f8;background:rgba(255,255,255,.06);font-size:.78rem;font-weight:700;
+      backdrop-filter:blur(8px);
+    }
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      min-height:52px;padding:0 19px;border-radius:12px;border:1px solid transparent;
+      font-weight:800;font-size:.9rem;cursor:pointer;transition:.28s;
+    }
+    .btn-primary{background:var(--gold);color:#12223d;box-shadow:0 14px 35px rgba(217,166,42,.24)}
+    .btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 38px rgba(217,166,42,.32)}
+    .btn-outline{border-color:rgba(255,255,255,.25);color:#fff;background:rgba(255,255,255,.04)}
+    .btn-outline:hover{background:rgba(255,255,255,.12);transform:translateY(-3px)}
+    .hero-note{margin-top:22px;color:#aebed5;font-size:.83rem}
+    .hero-panel{
+      justify-self:end;width:min(100%,420px);
+      background:rgba(9,25,49,.68);border:1px solid rgba(255,255,255,.15);
+      backdrop-filter:blur(16px);border-radius:24px;padding:24px;
+      box-shadow:0 28px 90px rgba(0,0,0,.22);
+      animation:floatCard 5s ease-in-out infinite;
+    }
+    @keyframes floatCard{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+    .panel-kicker{color:var(--gold-2);font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+    .hero-panel h3{font-family:"Manrope";font-size:1.45rem;margin:8px 0 14px}
+    .hero-panel p{color:#bfd0e6;font-size:.9rem}
+    .panel-list{margin-top:20px;display:grid;gap:10px}
+    .panel-list div{display:flex;gap:10px;align-items:flex-start;color:#eaf0f7;font-size:.88rem}
+    .panel-list b{color:var(--gold-2)}
+
+    /* Trust strip */
+    .trust{position:relative;z-index:4;margin-top:-34px}
+    .trust-grid{
+      background:#fff;border-radius:20px;box-shadow:var(--shadow);padding:0;display:grid;grid-template-columns:repeat(4,1fr);
+      overflow:hidden;border:1px solid rgba(16,33,58,.06)
+    }
+    .trust-item{padding:24px 22px;border-right:1px solid var(--line);display:flex;gap:14px;align-items:flex-start}
+    .trust-item:last-child{border-right:0}
+    .icon-box{
+      width:42px;height:42px;border-radius:13px;background:#fff9e9;border:1px solid #f2ddb0;
+      display:grid;place-items:center;color:#9b7417;flex:none;font-weight:900
+    }
+    .trust-item strong{display:block;font-size:.92rem}
+    .trust-item span{display:block;color:var(--muted);font-size:.77rem;margin-top:3px}
+
+    /* Sections */
+    section{padding:110px 0}
+    .about-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:70px;align-items:center}
+    .about-card{
+      border-radius:28px;background:linear-gradient(145deg,#0a1d38,#122f55);color:#fff;
+      padding:44px;position:relative;overflow:hidden;min-height:410px;box-shadow:var(--shadow)
+    }
+    .about-card::before{
+      content:"SA";position:absolute;right:-25px;bottom:-55px;font-family:"Manrope";font-size:16rem;font-weight:800;
+      line-height:1;color:rgba(255,255,255,.04)
+    }
+    .about-card h3{font-family:"Manrope";font-size:2.1rem;line-height:1.05;max-width:330px}
+    .about-card p{color:#c6d5e8;margin-top:18px;max-width:360px}
+    .contact-mini{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+    .mini-link{padding:11px 14px;border:1px solid rgba(255,255,255,.16);border-radius:10px;color:#fff;font-weight:700;font-size:.82rem}
+    .mini-link:hover{background:rgba(255,255,255,.08)}
+    .about-copy p{color:var(--muted);max-width:680px}
+    .about-list{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:32px}
+    .about-list .item{padding:18px;border:1px solid var(--line);border-radius:16px;background:#fff}
+    .about-list strong{font-size:.87rem}.about-list span{display:block;color:var(--muted);font-size:.78rem;margin-top:3px}
+
+    .services{background:var(--soft)}
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .service{
+      background:#fff;border:1px solid var(--line);border-radius:24px;padding:30px;transition:.35s;position:relative;overflow:hidden
+    }
+    .service::before{content:"";position:absolute;left:0;top:0;width:100%;height:3px;background:linear-gradient(90deg,var(--gold),transparent)}
+    .service:hover{transform:translateY(-8px);box-shadow:var(--shadow);border-color:rgba(217,166,42,.35)}
+    .service-icon{
+      width:55px;height:55px;border-radius:16px;background:#fff9e9;display:grid;place-items:center;
+      border:1px solid #f1ddb2;color:#946e13;font-size:1.45rem;margin-bottom:22px
+    }
+    .service h3{font-family:"Manrope";font-size:1.25rem;line-height:1.15}
+    .service p{color:var(--muted);font-size:.88rem;margin:10px 0 18px}
+    .tag-row{display:flex;gap:7px;flex-wrap:wrap}
+    .tag{font-size:.72rem;font-weight:700;background:#f4f7fb;color:#496078;border-radius:99px;padding:7px 9px}
+    .service-link{display:inline-flex;align-items:center;gap:7px;margin-top:20px;color:#0d2d54;font-weight:800;font-size:.8rem}
+    .service-link:hover{color:#946e13}
+
+    .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .step{
+      padding:24px;border:1px solid var(--line);border-radius:20px;background:#fff;position:relative
+    }
+    .step-num{font-family:"Manrope";font-size:2.4rem;color:#e7d7ad;font-weight:800;line-height:1}
+    .step h4{font-family:"Manrope";margin:14px 0 7px}
+    .step p{font-size:.8rem;color:var(--muted)}
+
+    .highlight{
+      background:var(--navy);color:#fff;position:relative;overflow:hidden
+    }
+    .highlight::after{
+      content:"";position:absolute;width:500px;height:500px;border-radius:50%;right:-180px;top:-220px;
+      background:radial-gradient(circle,rgba(217,166,42,.18),transparent 62%)
+    }
+    .highlight-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;position:relative;z-index:2}
+    .highlight p{color:#b9cadf;max-width:650px}
+    .features{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:28px}
+    .feature{display:flex;gap:12px;align-items:flex-start;padding:14px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.035);border-radius:14px}
+    .feature .dot{width:8px;height:8px;border-radius:50%;background:var(--gold);margin-top:8px;flex:none}
+    .feature strong{font-size:.85rem}.feature span{display:block;color:#9eb0c7;font-size:.76rem}
+    .youtube-card{
+      background:#fff;color:var(--ink);border-radius:25px;padding:28px;box-shadow:0 24px 70px rgba(0,0,0,.23)
+    }
+    .youtube-head{display:flex;justify-content:space-between;gap:15px;align-items:flex-start}
+    .yt-badge{background:#fce9e7;color:#c52218;border-radius:10px;padding:7px 10px;font-weight:900;font-size:.72rem}
+    .youtube-card h3{font-family:"Manrope";font-size:1.5rem;margin:12px 0 6px}
+    .youtube-card p{color:var(--muted);font-size:.82rem;margin-bottom:20px}
+    .yt-thumb{border-radius:17px;overflow:hidden;position:relative;background:#0b1f3b;aspect-ratio:16/9}
+    .yt-thumb img{width:100%;height:100%;object-fit:cover}
+    .play{
+      position:absolute;inset:0;display:grid;place-items:center;
+      background:linear-gradient(180deg,transparent,rgba(0,0,0,.33))
+    }
+    .play span{width:64px;height:64px;border-radius:50%;background:#fff;color:#c52218;display:grid;place-items:center;font-size:1.2rem;padding-left:4px;box-shadow:0 12px 34px rgba(0,0,0,.24)}
+    .yt-btn{margin-top:17px;width:100%;background:#c52218;color:#fff}
+
+    /* Contact */
+    .contact-wrap{display:grid;grid-template-columns:.82fr 1.18fr;gap:24px}
+    .contact-card{
+      background:linear-gradient(150deg,#0a1d38,#122d51);color:#fff;border-radius:25px;padding:34px;
+      min-height:100%;position:relative;overflow:hidden
+    }
+    .contact-card::before{content:"";position:absolute;inset:auto -70px -110px auto;width:280px;height:280px;border-radius:50%;border:1px solid rgba(255,255,255,.12)}
+    .contact-card h3{font-family:"Manrope";font-size:2rem;line-height:1.08}
+    .contact-card p{color:#c3d2e5;margin:13px 0 27px;font-size:.88rem}
+    .contact-lines{display:grid;gap:14px}
+    .contact-line{display:flex;gap:12px;align-items:flex-start}
+    .contact-line .ci{width:38px;height:38px;border:1px solid rgba(255,255,255,.12);border-radius:12px;display:grid;place-items:center;color:var(--gold-2);flex:none}
+    .contact-line strong{font-size:.77rem;color:#9eb3cf;text-transform:uppercase;letter-spacing:.08em}
+    .contact-line a{display:block;margin-top:2px;font-weight:700}
+    .contact-form{
+      background:#fff;border:1px solid var(--line);border-radius:25px;padding:34px;box-shadow:0 12px 45px rgba(16,33,58,.07)
+    }
+    .form-title{font-family:"Manrope";font-size:1.65rem;margin-bottom:7px}
+    .form-copy{color:var(--muted);font-size:.84rem;margin-bottom:24px}
+    form{display:grid;gap:14px}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    label{font-size:.77rem;font-weight:800;color:#31435e;display:grid;gap:7px}
+    input,textarea,select{
+      width:100%;border:1px solid #dbe3ee;border-radius:12px;background:#fbfcfe;outline:none;
+      padding:13px 14px;color:var(--ink);transition:.2s
+    }
+    textarea{min-height:130px;resize:vertical}
+    input:focus,textarea:focus,select:focus{border-color:#c9a040;box-shadow:0 0 0 4px rgba(217,166,42,.12);background:#fff}
+    .form-foot{display:flex;justify-content:space-between;gap:15px;align-items:center;flex-wrap:wrap}
+    .form-note{color:#738198;font-size:.73rem}
+    .form-status{display:none;margin-top:2px;border-radius:12px;padding:10px 12px;background:#f0f8f2;color:#2f6a3b;font-size:.78rem;font-weight:700}
+
+    /* Footer */
+    footer{background:#06152a;color:#d7e1ef;padding:28px 0}
+    .footer-row{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .footer-brand{display:flex;align-items:center;gap:13px}
+    .footer-brand img{height:48px;width:auto;opacity:.98}
+    .footer-brand span{font-size:.74rem;color:#8ea1bb}
+    .footer-links{display:flex;gap:18px;align-items:center;flex-wrap:wrap;font-size:.78rem}
+    .footer-links a:hover{color:#fff}
+    .copyright{border-top:1px solid rgba(255,255,255,.08);padding-top:18px;margin-top:22px;color:#7f93ae;font-size:.72rem;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+
+    /* Floating WhatsApp */
+    .whatsapp-float{
+      position:fixed;right:20px;bottom:20px;width:57px;height:57px;border-radius:50%;
+      display:grid;place-items:center;background:#18a957;color:#fff;font-size:1.5rem;
+      box-shadow:0 14px 35px rgba(24,169,87,.34);z-index:60;transition:transform .25s ease,box-shadow .25s ease;
+      animation:pulse 2.2s infinite;
+    }
+    .whatsapp-float svg{width:29px;height:29px;display:block;color:#fff}.whatsapp-float:hover{transform:translateY(-4px) scale(1.04)}
+    @keyframes pulse{
+      0%,100%{box-shadow:0 14px 35px rgba(24,169,87,.34)}
+      50%{box-shadow:0 14px 35px rgba(24,169,87,.34),0 0 0 10px rgba(24,169,87,.08)}
+    }
+
+    /* Motion */
+    .reveal{opacity:0;transform:translateY(26px);transition:opacity .75s ease,transform .75s ease}
+    .reveal.visible{opacity:1;transform:none}
+    .delay-1{transition-delay:.08s}.delay-2{transition-delay:.16s}.delay-3{transition-delay:.24s}
+
+    @media (max-width: 980px){
+      .nav-links{position:absolute;left:20px;right:20px;top:86px;display:none;flex-direction:column;gap:0;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);padding:10px}
+      .nav-links.open{display:flex}
+      .nav-links a{width:100%;padding:12px}.nav-links a::after{display:none}
+      .nav-cta{display:none}.menu-btn{display:block}
+      .hero-grid,.highlight-grid{grid-template-columns:1fr}.hero-panel{display:none}
+      .hero{min-height:690px}.hero-grid{min-height:690px}
+      .trust-grid{grid-template-columns:1fr 1fr}.trust-item:nth-child(2){border-right:0}.trust-item:nth-child(-n+2){border-bottom:1px solid var(--line)}
+      .about-grid,.contact-wrap{grid-template-columns:1fr;gap:30px}
+      .services-grid{grid-template-columns:1fr 1fr}
+      .process-grid{grid-template-columns:1fr 1fr}
+    }
+
+    @media (max-width: 640px){
+      .container{width:min(var(--max),calc(100% - 28px))}
+      .topbar-left{display:none}.topbar-inner{justify-content:center}
+      .brand img{height:55px}.nav{min-height:70px}
+      .hero-grid{padding:48px 0}.hero-title{font-size:clamp(2.7rem,15vw,4.4rem)}
+      section{padding:80px 0}.section-head{margin-bottom:34px}
+      .trust{margin-top:-20px}.trust-grid{grid-template-columns:1fr}
+      .trust-item{border-right:0!important;border-bottom:1px solid var(--line)!important}.trust-item:last-child{border-bottom:0!important}
+      .about-card{padding:30px;min-height:auto}.about-list{grid-template-columns:1fr}
+      .services-grid,.process-grid{grid-template-columns:1fr}
+      .features,.grid-2{grid-template-columns:1fr}
+      .contact-card,.contact-form{padding:26px}
+      .form-foot{align-items:stretch}.form-foot .btn{width:100%}
+      .whatsapp-float{right:14px;bottom:14px}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <div class="topbar-left">
+        <span>Planning • Design • Construction • Interiors • Vastu • PMC</span>
+      </div>
+      <div class="topbar-right">
+        <a href="mailto:ajay.pannala143@gmail.com">ajay.pannala143@gmail.com</a>
+        <a href="tel:+918121119901">+91 81211 19901</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="SA Constructions and Developers">
+        <img src="logo-clear.jpeg" alt="SA Constructions and Developers logo">
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a class="active" href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#youtube">YouTube</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="nav-cta" href="https://wa.me/918121119901?text=Hello%20Pannala%20Ajay%2C%20I%20would%20like%20a%20consultation%20from%20SA%20Constructions%20and%20Developers." target="_blank" rel="noopener">WhatsApp Consultation ↗</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-media"><img src="hero-house.jpg" alt="Modern luxury home"></div>
+      <div class="container hero-grid">
+        <div class="hero-content reveal visible">
+          <div class="eyebrow">Welcome to SA Constructions & Developers</div>
+          <h1 class="hero-title">Build better.<span>Live better.</span></h1>
+          <p class="hero-sub">Building Dreams with Quality, Precision & Trust — from property consultation and architectural planning to construction, interiors, renovation and Vastu guidance.</p>
+
+          <div class="hero-pills">
+            <span class="pill">Residential</span>
+            <span class="pill">Commercial</span>
+            <span class="pill">Turnkey</span>
+            <span class="pill">Vastu</span>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Get Free Consultation →</a>
+            <a class="btn btn-outline" href="#services">Explore Services</a>
+          </div>
+          <div class="hero-note">Direct consultation with Pannala Ajay • +91 81211 19901</div>
+        </div>
+
+        <aside class="hero-panel">
+          <div class="panel-kicker">What can we help with?</div>
+          <h3>One trusted team for the entire journey.</h3>
+          <p>Looking to buy or resell a property, build a new home, or renovate your existing space with Vastu in mind?</p>
+          <div class="panel-list">
+            <div><b>01</b><span>Property buying / resale consultation</span></div>
+            <div><b>02</b><span>Planning, designing and execution</span></div>
+            <div><b>03</b><span>Interiors, renovation and Vastu guidance</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="trust">
+      <div class="container trust-grid">
+        <div class="trust-item reveal">
+          <div class="icon-box">✓</div><div><strong>Experienced Team</strong><span>Skilled professionals dedicated to your project.</span></div>
+        </div>
+        <div class="trust-item reveal delay-1">
+          <div class="icon-box">◇</div><div><strong>Quality Materials</strong><span>Quality-focused execution for durable results.</span></div>
+        </div>
+        <div class="trust-item reveal delay-2">
+          <div class="icon-box">◷</div><div><strong>On-Time Delivery</strong><span>We value time and deliver as promised.</span></div>
+        </div>
+        <div class="trust-item reveal delay-3">
+          <div class="icon-box">₹</div><div><strong>Transparent Pricing</strong><span>Clear and honest pricing with no hidden costs.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div class="about-card reveal">
+          <div class="eyebrow">About us</div>
+          <h3>Built around your vision, executed with care.</h3>
+          <p>SA Constructions and Developers is a trusted construction company specializing in residential and commercial projects.</p>
+          <div class="contact-mini">
+            <a class="mini-link" href="tel:+918121119901">Call Ajay</a>
+            <a class="mini-link" href="mailto:ajay.pannala143@gmail.com">Email us</a>
+          </div>
+        </div>
+
+        <div class="about-copy reveal delay-1">
+          <div class="eyebrow">Who we are</div>
+          <h2 class="section-title">From concept to completion, everything stays connected.</h2>
+          <p>We deliver quality construction with modern design, expert planning, and professional project management. The focus is simple: make the construction process clearer, more reliable and more comfortable for the client.</p>
+
+          <div class="about-list">
+            <div class="item"><strong>Modern Planning</strong><span>Thoughtful layouts and practical design direction.</span></div>
+            <div class="item"><strong>Quality Control</strong><span>Attention to materials, workmanship and finishing.</span></div>
+            <div class="item"><strong>Project Management</strong><span>Coordinated execution from start to completion.</span></div>
+            <div class="item"><strong>Client-First Approach</strong><span>Direct communication and transparent decisions.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Our services</div>
+          <h2 class="section-title">Three focused ways we can help.</h2>
+          <p class="section-copy">Choose the support you need — property guidance, complete construction or a smarter renovation of your existing home.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service reveal">
+            <div class="service-icon">⌂</div>
+            <h3>Property Buying & Resale</h3>
+            <p>Looking to buy or resell a flat, plot or villa? Start with a direct consultation and discuss your requirement with Ajay.</p>
+            <div class="tag-row">
+              <span class="tag">Flat</span><span class="tag">Plot</span><span class="tag">Villa</span><span class="tag">Consultation</span>
+            </div>
+            <a class="service-link" href="https://wa.me/918121119901?text=Hello%20Ajay%2C%20I%20am%20looking%20to%20buy%20or%20resell%20a%20flat%2C%20plot%20or%20villa." target="_blank" rel="noopener">Discuss my requirement ↗</a>
+          </article>
+
+          <article class="service reveal delay-1">
+            <div class="service-icon">▦</div>
+            <h3>Home Planning & Construction</h3>
+            <p>Get support across planning, 2D/3D house design, construction execution, quality checking, estimation and project management.</p>
+            <div class="tag-row">
+              <span class="tag">Planning</span><span class="tag">2D / 3D</span><span class="tag">Execution</span><span class="tag">PMC</span><span class="tag">BOQ</span>
+            </div>
+            <a class="service-link" href="https://wa.me/918121119901?text=Hello%20Ajay%2C%20I%20need%20planning%2C%20design%20and%20construction%20support%20for%20a%20new%20home." target="_blank" rel="noopener">Plan my project ↗</a>
+          </article>
+
+          <article class="service reveal delay-2">
+            <div class="service-icon">✦</div>
+            <h3>Interiors, Renovation & Vastu</h3>
+            <p>Renovate your present home with thoughtful interiors and Vastu guidance, with practical coordination for the work.</p>
+            <div class="tag-row">
+              <span class="tag">Interiors</span><span class="tag">Renovation</span><span class="tag">Vastu</span><span class="tag">Mahavastu</span>
+            </div>
+            <a class="service-link" href="https://wa.me/918121119901?text=Hello%20Ajay%2C%20I%20want%20to%20renovate%20my%20present%20home%20with%20interior%20and%20Vastu%20guidance." target="_blank" rel="noopener">Talk about renovation ↗</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Our approach</div>
+          <h2 class="section-title">A clear path from idea to handover.</h2>
+          <p class="section-copy">A premium experience is not just about the finished building. It is about keeping each step understandable and organised.</p>
+        </div>
+
+        <div class="process-grid">
+          <div class="step reveal"><div class="step-num">01</div><h4>Understand</h4><p>Discuss your property, construction, renovation or Vastu requirement.</p></div>
+          <div class="step reveal delay-1"><div class="step-num">02</div><h4>Plan</h4><p>Shape the design, scope, estimate and execution direction around your needs.</p></div>
+          <div class="step reveal delay-2"><div class="step-num">03</div><h4>Execute</h4><p>Coordinate construction, interiors, quality checking and project management.</p></div>
+          <div class="step reveal delay-3"><div class="step-num">04</div><h4>Deliver</h4><p>Move toward the finished result with clear communication and attention to detail.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="highlight" id="youtube">
+      <div class="container highlight-grid">
+        <div class="reveal">
+          <div class="eyebrow">Watch & connect</div>
+          <h2 class="section-title">See SA Constructions & Developers beyond the website.</h2>
+          <p>Visit the official YouTube channel for SA Constructions and Developers and keep up with the company's construction, design and project content.</p>
+
+          <div class="features">
+            <div class="feature"><span class="dot"></span><div><strong>Construction insights</strong><span>Useful content around building and execution.</span></div></div>
+            <div class="feature"><span class="dot"></span><div><strong>Design inspiration</strong><span>Ideas for modern homes and spaces.</span></div></div>
+            <div class="feature"><span class="dot"></span><div><strong>Direct contact</strong><span>Reach Ajay quickly through WhatsApp.</span></div></div>
+            <div class="feature"><span class="dot"></span><div><strong>Professional guidance</strong><span>Start with a clear requirement and consultation.</span></div></div>
+          </div>
+        </div>
+
+        <div class="youtube-card reveal delay-1">
+          <div class="youtube-head">
+            <div>
+              <div class="eyebrow">Official channel</div>
+              <h3>SA Constructions and Developers</h3>
+              <p>YouTube • Construction • Design • Projects</p>
+            </div>
+            <span class="yt-badge">YouTube</span>
+          </div>
+          <a class="yt-thumb" href="https://youtube.com/@saconstructions-8118c?si=_rbspihxQJSr4JIA" target="_blank" rel="noopener" aria-label="Open SA Constructions and Developers YouTube channel">
+            <img src="hero-house.jpg" alt="SA Constructions and Developers">
+            <span class="play">▶</span>
+          </a>
+          <a class="btn yt-btn" href="https://youtube.com/@saconstructions-8118c?si=_rbspihxQJSr4JIA" target="_blank" rel="noopener">Visit YouTube Channel ↗</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="eyebrow">Contact</div>
+          <h2 class="section-title">Tell us what you're planning.</h2>
+          <p class="section-copy">Fill the form below. Your message will open directly in WhatsApp with Pannala Ajay so the conversation can continue instantly.</p>
+        </div>
+
+        <div class="contact-wrap">
+          <div class="contact-card reveal">
+            <div class="eyebrow">Let's talk</div>
+            <h3>Build your next move with confidence.</h3>
+            <p>Whether you are buying, reselling, building a new home or renovating your present home, send the requirement and start the conversation.</p>
+
+            <div class="contact-lines">
+              <div class="contact-line">
+                <div class="ci">⌕</div>
+                <div><strong>Phone / WhatsApp</strong><a href="tel:+918121119901">+91 81211 19901</a></div>
+              </div>
+              <div class="contact-line">
+                <div class="ci">@</div>
+                <div><strong>Email</strong><a href="mailto:ajay.pannala143@gmail.com">ajay.pannala143@gmail.com</a></div>
+              </div>
+              <div class="contact-line">
+                <div class="ci">▶</div>
+                <div><strong>YouTube</strong><a href="https://youtube.com/@saconstructions-8118c?si=_rbspihxQJSr4JIA" target="_blank" rel="noopener">SA Constructions and Developers</a></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form reveal delay-1">
+            <h3 class="form-title">Send a project enquiry</h3>
+            <p class="form-copy">We will prepare a WhatsApp message from your details. No data is sent to a third-party backend.</p>
+
+            <form id="contactForm">
+              <div class="grid-2">
+                <label>Full name
+                  <input id="name" name="name" type="text" placeholder="Your name" required>
+                </label>
+                <label>Phone number
+                  <input id="phone" name="phone" type="tel" placeholder="+91..." required>
+                </label>
+              </div>
+
+              <div class="grid-2">
+                <label>I'm interested in
+                  <select id="service" name="service" required>
+                    <option value="">Select a service</option>
+                    <option>Property buying / resale</option>
+                    <option>Home planning & construction</option>
+                    <option>Interiors / renovation / Vastu</option>
+                  </select>
+                </label>
+                <label>Preferred contact
+                  <select id="contactMethod" name="contactMethod" required>
+                    <option value="">Select</option>
+                    <option>WhatsApp</option>
+                    <option>Phone call</option>
+                    <option>Email</option>
+                  </select>
+                </label>
+              </div>
+
+              <label>Your requirement
+                <textarea id="message" name="message" placeholder="Tell us a little about your property, plot, construction, renovation or Vastu requirement." required></textarea>
+              </label>
+
+              <div class="form-foot">
+                <div class="form-note">By continuing, WhatsApp will open with your enquiry text ready to send.</div>
+                <button class="btn btn-primary" type="submit">Send on WhatsApp →</button>
+              </div>
+              <div class="form-status" id="formStatus">Opening WhatsApp with your enquiry…</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-row">
+        <div class="footer-brand">
+          <img src="logo-footer.jpeg" alt="SA Constructions and Developers">
+          <span>Building Dreams with Quality, Precision & Trust.</span>
+        </div>
+        <div class="footer-links">
+          <a href="tel:+918121119901">Call</a>
+          <a href="mailto:ajay.pannala143@gmail.com">Email</a>
+          <a href="https://wa.me/918121119901" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://youtube.com/@saconstructions-8118c?si=_rbspihxQJSr4JIA" target="_blank" rel="noopener">YouTube</a>
+        </div>
+      </div>
+      <div class="copyright">
+        <span>© <span id="year"></span> SA Constructions and Developers. All rights reserved.</span>
+        <span>Designed for a premium, direct-to-client experience.</span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/918121119901?text=Hello%20Ajay%2C%20I%20found%20SA%20Constructions%20and%20Developers%20online%20and%20would%20like%20to%20discuss%20a%20requirement." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path fill="currentColor" d="M16.04 3A12.97 12.97 0 0 0 4.91 22.48L3 29l6.71-1.85A13 13 0 1 0 16.04 3Zm0 23.68c-2.03 0-4.02-.54-5.76-1.56l-.41-.24-3.98 1.1 1.06-3.88-.27-.42a10.72 10.72 0 1 1 9.36 5Zm5.88-8.02c-.32-.16-1.91-.94-2.21-1.04-.3-.11-.52-.16-.74.16-.22.32-.85 1.04-1.04 1.25-.19.22-.38.24-.7.08-.32-.16-1.33-.49-2.53-1.56-.94-.84-1.57-1.87-1.75-2.18-.18-.32-.02-.49.14-.65.14-.14.32-.38.48-.57.16-.19.21-.32.32-.54.11-.22.05-.4-.03-.56-.08-.16-.74-1.78-1.02-2.44-.27-.65-.54-.56-.74-.57l-.63-.01c-.22 0-.57.08-.87.4-.3.32-1.14 1.11-1.14 2.71s1.17 3.14 1.33 3.36c.16.21 2.3 3.51 5.58 4.92.78.34 1.38.55 1.85.7.78.25 1.49.21 2.05.13.63-.09 1.91-.78 2.18-1.53.27-.76.27-1.4.19-1.53-.08-.13-.3-.21-.62-.37Z"/>
+    </svg>
+  </a>
+
+  <script>
+    const navLinks = document.getElementById("navLinks");
+    const menuBtn = document.getElementById("menuBtn");
+
+    menuBtn.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => navLinks.classList.remove("open"));
+    });
+
+    // Reveal-on-scroll animation.
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add("visible");
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
+
+    // Keep the active nav item synced with the visible section.
+    const sections = [...document.querySelectorAll("main section[id]")];
+    const navAnchors = [...document.querySelectorAll(".nav-links a")];
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        navAnchors.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + entry.target.id));
+      });
+    }, { rootMargin: "-35% 0px -55% 0px" });
+
+    sections.forEach(section => sectionObserver.observe(section));
+
+    // WhatsApp enquiry form — no backend required.
+    document.getElementById("contactForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const service = document.getElementById("service").value;
+      const contactMethod = document.getElementById("contactMethod").value;
+      const message = document.getElementById("message").value.trim();
+
+      const whatsappMessage =
+`Hello Pannala Ajay,
+
+I found SA Constructions and Developers online and would like to discuss a requirement.
+
+Name: ${name}
+Phone: ${phone}
+Service: ${service}
+Preferred contact: ${contactMethod}
+
+Requirement:
+${message}
+
+Thank you.`;
+
+      document.getElementById("formStatus").style.display = "block";
+      const url = "https://wa.me/918121119901?text=" + encodeURIComponent(whatsappMessage);
+      window.open(url, "_blank", "noopener,noreferrer");
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
